@@ -1,4 +1,4 @@
-﻿<Page
+<Page
     x:Class="IQGame.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -8,6 +8,100 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Name="AnswerButton"
+                Grid.Row="0" Grid.Column="4"  
+                HorizontalAlignment="Center"  
+                Height="64" Width="128" 
+                Margin="0,40"/>
+
+        <TextBlock Name="QuastionText"
+                   TextWrapping="Wrap"
+                   Grid.Row="1" Grid.Column="1" 
+                   Grid.ColumnSpan="3" 
+                   FontSize="24"
+                   
+                   />
+
+
+
+        <Button Name="ASelect" 
+                Grid.Row="2" Grid.Column="1" 
+                Grid.ColumnSpan="3" 
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Margin="0,20" 
+                Content="A.托德"
+                FontSize="24"
+                Height="84" Width="800"
+                Click="ASelect_Click"/>
+        <Button Name="BSelect"
+                Grid.Row="3" Grid.Column="1" 
+                Grid.ColumnSpan="3" 
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Margin="0,20" 
+                Content="B.穆拉"
+                FontSize="24"
+                Height="84" Width="800"
+                Click="BSelect_Click"/>
+        <Button Name="CSelect"
+                Grid.Row="4" Grid.Column="1" 
+                Grid.ColumnSpan="3" 
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Margin="0,20" 
+                Content="C.艾希"
+                FontSize="24"
+                Height="84" Width="800"
+                Click="CSelect_Click"/>
+
+        <Button Name="LastButton"
+                Grid.Row="5" Grid.Column="0"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                FontFamily="Segoe MDL2 Assets" Content="&#xE72B;"
+                FontSize="32"
+                Click="LastButton_Click"/>
+        <Button Name="NextButton"
+                Grid.Row="5" Grid.Column="4"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                FontFamily="Segoe MDL2 Assets" Content="&#xE72A;"
+                FontSize="32"
+                Click="NextButton_Click"/>
+        <Button Name="OKButton" Grid.Row="5" Grid.Column="2"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Content="确定"
+                FontSize="32"
+                Click="OKButton_Click">
+            <Button.Flyout>
+                <Flyout>
+                    <StackPanel>
+                        <TextBlock Name="FlyOut" 
+                                   Style="{ThemeResource BaseTextBlockStyle}"/>
+                    </StackPanel>
+                </Flyout>
+            </Button.Flyout>
+        </Button>
+        
     </Grid>
 </Page>
